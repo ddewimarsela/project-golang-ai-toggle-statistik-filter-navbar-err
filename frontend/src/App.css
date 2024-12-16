@@ -1,0 +1,205 @@
+:root {
+  --light-primary: #0093E9;
+  --light-secondary: #0066cc;
+  --light-background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  --light-text: #333333;
+  --light-card-bg: rgba(255, 255, 255, 0.15);
+  --light-card-border: rgba(255, 255, 255, 0.2);
+  
+  --dark-primary: #2563eb;
+  --dark-secondary: #1d4ed8;
+  --dark-background: linear-gradient(160deg, #1a1a1a 0%, #363636 100%);
+  --dark-text: #ffffff;
+  --dark-card-bg: rgba(0, 0, 0, 0.2);
+  --dark-card-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--light-background);
+  color: var(--light-text);
+  transition: background 0.3s ease;
+}
+
+[data-theme='dark'] body {
+  background: var(--dark-background);
+  color: var(--dark-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 80px auto 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 100px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-subtitle {
+  color: var(--light-text);
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .app-subtitle {
+  color: var(--dark-text);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--light-card-bg);
+  border: 1px solid var(--light-card-border);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .card {
+  background: var(--dark-card-bg);
+  border-color: var(--dark-card-border);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .card-title {
+  color: var(--dark-text);
+}
+
+/* Form Elements */
+.input-field {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--light-card-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .input-field {
+  border-color: var(--dark-card-border);
+  color: var(--dark-text);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--light-primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--light-secondary);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .button {
+  background: var(--dark-primary);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .button:hover {
+  background: var(--dark-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+[data-theme='dark'] .button.loading {
+  background: var(--dark-secondary);
+}
+
+/* Response Section */
+.response-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+[data-theme='dark'] .response-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  color: var(--light-text);
+  opacity: 0.8;
+}
+
+[data-theme='dark'] .footer {
+  color: var(--dark-text);
+}
+
+/* Charts Container */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.chart-item {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .chart-item {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin-top: 60px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+

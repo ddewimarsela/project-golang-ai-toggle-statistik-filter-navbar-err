@@ -1,0 +1,78 @@
+:root {
+  /* Light Mode Colors 0066cc*/
+  --light-primary: #0093E9;
+  --light-secondary: #0066cc;
+  --light-background: linear-gradient(
+    160deg,
+    #1e4d92 0%,
+    #0093E9 50%,
+    #006994 100%
+  );
+  --light-text: #ffffff;
+  --light-card-bg: rgba(255, 255, 255, 0.95);
+  --light-input-border: #e0e0e0;
+  --light-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+
+  /* Dark Mode Colors */
+  --dark-primary: #0093E9;
+  --dark-secondary: #0066cc;
+  --dark-background: linear-gradient(
+    to bottom right,
+    #1a1a2e 0%,
+    #16213e 30%,
+    #0f3460 70%,
+    #1a1a2e 100%
+  );
+  --dark-text: #ffffff;
+  --dark-card-bg: rgba(40, 40, 40, 0.95);
+  --dark-input-border: #404040;
+  --dark-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Mode Class */
+[data-theme='dark'] {
+  --primary-color: var(--dark-primary);
+  --secondary-color: var(--dark-secondary);
+  --background-color: var(--dark-background);
+  --text-color: var(--dark-text);
+  --card-bg: var(--dark-card-bg);
+  --input-border: var(--dark-input-border);
+  --shadow: var(--dark-shadow);
+}
+
+/* Light Mode Class */
+[data-theme='light'] {
+  --primary-color: var(--light-primary);
+  --secondary-color: var(--light-secondary);
+  --background-color: var(--light-background);
+  --text-color: var(--light-text);
+  --card-bg: var(--light-card-bg);
+  --input-border: var(--light-input-border);
+  --shadow: var(--light-shadow);
+}
+
+/*variabel warna dan style yang digunakan agar konsisten */
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease;
+}
+
+/* menggunakan box-sizing untuk semua elemen */
+* {
+  box-sizing: border-box;
+}
+
+/*font untuk element*/
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

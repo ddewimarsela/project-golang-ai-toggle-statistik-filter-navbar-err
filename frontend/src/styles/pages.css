@@ -1,0 +1,21 @@
+.page-container {
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+}
